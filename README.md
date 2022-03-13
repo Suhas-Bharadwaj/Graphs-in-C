@@ -20,5 +20,5 @@ There is an array of structures which holds all the nodes in the graph and an ad
 
 # How to compile
 The main file has to be compiled along with the graph.c and graph.h files in order for it to work. It can be done as
-    ```gcc main.c graph.h graph.c```
+                    ```gcc main.c graph.h graph.c```
 If you wish to rename the output file at compilation, following the gcc command with ```-o {filename}``` will do so.

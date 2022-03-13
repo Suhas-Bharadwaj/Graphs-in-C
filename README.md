@@ -10,7 +10,7 @@ The make edge and destroy edge functions change the values in the adjacency matr
 
 The data in a node can be changed by dereferencing the node at the same indeces and changing the data attribute. Examples are present in the main program.
 
-#How it works
+# How it works
 There is an array of structures which holds all the nodes in the graph and an adjacency matrix which is an array of integers store the state of the edge between the nodes. The array of structures (referred to as gMatrix) store pointers to struct node. This is mirrored in the adjacency matrix but it stores integers instead. This allows us to check the adjacency matrix for the state of the edge while working with the nodes in the gMatrix and since the indeces are all synchronized, the functions can be used without much alteration to the arguments.
 
 # Known issues and nuances
@@ -20,5 +20,5 @@ There is an array of structures which holds all the nodes in the graph and an ad
 
 # How to compile
 The main file has to be compiled along with the graph.c and graph.h files in order for it to work. It can be done as
-                    ```gcc main.c graph.h graph.c```
+                    ```gcc main.c graph.h graph.c```.
 If you wish to rename the output file at compilation, following the gcc command with ```-o {filename}``` will do so.

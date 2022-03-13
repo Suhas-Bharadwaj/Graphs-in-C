@@ -1,12 +1,24 @@
 # Graphs in C
-This is a full implementation of graphs in C where each node can store integer values for data and have weights associated with them. 
-The make edge and destroy edge functions take in the pointer to graph, source node and destination node for the edge as arguments.
-The print graph function only prints the data and the node if an edge exists between the two.
+This is a full implementation of graphs in C.
 
 # How to use
+The make graph function takes in the pointer to graph, the weight each node has and the number of nodes in the graph. Destroy graph frees up the memory that was allocated to the graph. The print graph function takes in the graph as the argument and prints data and the nodes if an edge exists between the said nodes.
 
-There is an 2D adjacency matrix of bool that coexists with a 2D array of structures that constiutes the graph. Making and destroying edges is done by changing the values in the adjacency matrix.
+The make edge function takes in the pointer to graph, source node and destination node and the destroy edge function takes in the same arguments.
 
-By default, this program will make a 2x2 graph with 0 as the data for the nodes which all have unit weight.
+The make edge and destroy edge functions change the values in the adjacency matrix to either a 1 or a 0 depeneding on the state of the edge between the nodes.
 
-If the indices of unavailable nodes are passed, a segmentation fault occurs.
+The data in a node can be changed by dereferencing the node at the same indeces and changing the data attribute. Examples are present in the main program.
+
+#How it works
+There is an array of structures which holds all the nodes in the graph and an adjacency matrix which is an array of integers store the state of the edge between the nodes. The array of structures (referred to as gMatrix) store pointers to struct node. This is mirrored in the adjacency matrix but it stores integers instead. This allows us to check the adjacency matrix for the state of the edge while working with the nodes in the gMatrix and since the indeces are all synchronized, the functions can be used without much alteration to the arguments.
+
+#Known issues and nuances
+1. Cast from integer of different size warning is issued at line 98.
+2. Making a graph that replicates a mesh is not trivial.
+3. Passing the indeces of nodes that aren't initialized in the graph results in a segmentation fault.
+
+#How to compile
+The main file has to be compiled along with the graph.c and graph.h files in order for it to work. It can be done as
+    ```gcc main.c graph.h graph.c```
+If you wish to rename the output file at compilation, following the gcc command with ```-o {filename}``` will do so.

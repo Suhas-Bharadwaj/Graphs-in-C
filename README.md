@@ -13,12 +13,12 @@ The data in a node can be changed by dereferencing the node at the same indeces 
 #How it works
 There is an array of structures which holds all the nodes in the graph and an adjacency matrix which is an array of integers store the state of the edge between the nodes. The array of structures (referred to as gMatrix) store pointers to struct node. This is mirrored in the adjacency matrix but it stores integers instead. This allows us to check the adjacency matrix for the state of the edge while working with the nodes in the gMatrix and since the indeces are all synchronized, the functions can be used without much alteration to the arguments.
 
-#Known issues and nuances
+# Known issues and nuances
 1. Cast from integer of different size warning is issued at line 98.
 2. Making a graph that replicates a mesh is not trivial.
 3. Passing the indeces of nodes that aren't initialized in the graph results in a segmentation fault.
 
-#How to compile
+# How to compile
 The main file has to be compiled along with the graph.c and graph.h files in order for it to work. It can be done as
     ```gcc main.c graph.h graph.c```
 If you wish to rename the output file at compilation, following the gcc command with ```-o {filename}``` will do so.

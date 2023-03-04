@@ -2,6 +2,7 @@
 This is a full implementation of graphs in C.
 
 # (Deprecated in favour of my data structures repository.)
+Data Structures repo: https://github.com/gaybowser69/DataStructures
 
 # How to use
 The make graph function takes in the pointer to graph, the weight each node has and the number of nodes in the graph. Destroy graph frees up the memory that was allocated to the graph. The print graph function takes in the graph as the argument and prints data and the nodes if an edge exists between the said nodes.
